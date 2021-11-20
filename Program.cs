@@ -16,7 +16,25 @@ namespace cse210_batter_csharp
             // Bricks
             cast["bricks"] = new List<Actor>();
 
+            List<Brick> _bricks = new List<Brick>();
+
             // TODO: Add your bricks here
+
+            for (int x = Constants.BRICK_SPACE; x < 700; x += (Constants.BRICK_WIDTH + Constants.BRICK_SPACE))
+            {
+                for (int y = 0; y < 150; y += (Constants.BRICK_HEIGHT + Constants.BRICK_SPACE))
+                {
+                    Brick _brick = new Brick();
+                    Point _point = new Point(x,y);
+                    _brick.SetPosition(_point);
+                    cast["bricks"].Add(_brick);
+                }
+            }
+
+            foreach(Brick b in _bricks)
+            {
+                Console.WriteLine($"({b.GetX()}, {b.GetY()})");
+            }
 
             // The Ball (or balls if desired)
             cast["balls"] = new List<Actor>();
