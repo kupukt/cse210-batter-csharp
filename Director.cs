@@ -40,6 +40,7 @@ namespace cse210_batter_csharp
                 {
                     _keepPlaying = false;
                 }
+                
             }
 
             Console.WriteLine("Game over!");
